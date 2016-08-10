@@ -35,7 +35,6 @@ void ex2()
 
         if(isdigit(current) == false && isdigit(previous) == true){
             contador++;
-            cout << "contou: " << contador << " - current: " << current << " - previous: " << previous  << endl;
         }
 
         previous = current;
@@ -50,6 +49,26 @@ void ex3()
         Implementar um programa em linguagem C que imprima quantos números existem em cada linha lógica terminada
         por ; do arquivo in2.txt (resposta: 1 1 1 3 12 3 5 2 1 2 1 4 2 2 2 3 3 1).
     */
+    printf("Exercicio 3\n\n");
+
+    int countLine = 0;
+    int contador = 0;
+    char current;
+    char previous;
+    char value;
+
+    fstream file("files/in2.txt", fstream::in);
+    while (file >> noskipws >> value) {
+
+        if (isdigit(value) ){
+            countLine++;
+        } else {
+            cout << "Total da linha: " << countLine << endl;
+            countLine = 0;
+        }
+
+    }
+    printf("\n##############################\n\n");
 }
 
 void ex4()
@@ -73,5 +92,6 @@ int main()
 {
     ex1();
     ex2();
+    ex3();
     return 0;
 }
