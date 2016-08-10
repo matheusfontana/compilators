@@ -53,20 +53,17 @@ void ex3()
 
     int countLine = 0;
     int contador = 0;
-    char current;
-    char previous;
     char value;
 
-    fstream file("files/in2.txt", fstream::in);
-    while (file >> noskipws >> value) {
+    fstream file("files/in2.txt");
+    file >> noskipws;
+    while (file >> value) {
 
-        if (isdigit(value) ){
-            countLine++;
-        } else {
+            cout << value << endl;
+/*            countLine++;
             cout << "Total da linha: " << countLine << endl;
             countLine = 0;
-        }
-
+*/
     }
     printf("\n##############################\n\n");
 }
